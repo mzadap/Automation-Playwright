@@ -12,9 +12,9 @@ import utils.PlaywrightListeners;
 @Listeners(PlaywrightListeners.class)
 public class ApiTest extends BaseTestRest {
 
-    APIResponse response;
+    private APIResponse response;
     Logger logger = LoggerFactory.getLogger(ApiTest.class.getName());
-
+    //Dummy Rest Api is used to performed for api test
     @Test
     public void getAllObject() {
         response = getRequest("/objects");

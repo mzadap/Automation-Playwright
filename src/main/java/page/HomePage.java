@@ -1,14 +1,10 @@
 package page;
 
-import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import org.testng.IClass;
-import setup.ConfigLoader;
 
-import java.nio.file.Paths;
 
 public class HomePage extends BasePage{
 
@@ -26,6 +22,7 @@ public class HomePage extends BasePage{
         return this;
     }
 
+    //Navigate to another Page class object from Home Page
     public ProductPage clickOnProducts() {
         page.locator("//a[@href='/products']").click();
         return new ProductPage(page);
@@ -48,17 +45,7 @@ public class HomePage extends BasePage{
     }
 
     public HomePage goToUrl() {
-       page.navigate("https://automationexercise.com/");
+        page.navigate("https://automationexercise.com/");
         return this;
     }
-   /* public HomePage takeScreenshot() {
-        page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("./screenshot/Homepage.png")));
-        return this;
-    }*/
-
-    /*public void getRadioButton() {
-        //page.navigate("https://rahulshettyacademy.com/AutomationPractice/");
-        page.locator("(//input[@name='radioButton'])[1]").click();
-    }*/
-
 }

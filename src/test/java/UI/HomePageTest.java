@@ -32,6 +32,7 @@ public class HomePageTest extends BaseTest {
     @Test(description = "Add item to cart")
     @Step("End to End test 2 ")
     public void add_item_to_cart() {
+
         String url = ConfigLoader.getInstance().getUrl();
         HomePage homePage = new HomePage(page);
         homePage.goToUrl()
