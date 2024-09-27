@@ -15,7 +15,7 @@ public class HomePageTest extends BaseTest {
 
     Logger logger = LoggerFactory.getLogger(HomePageTest.class);
     //@Test(description = "End to End test")
-    @Step("End to End test")
+    @Step("")
     public void test2() {
         String url = ConfigLoader.getInstance().getUrl();
         HomePage homePage = new HomePage(page);
