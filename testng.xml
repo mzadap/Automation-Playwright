@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="utils.PlaywrightListeners"></listener>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"></listener>
+    </listeners>
+    <test name="UI">
+        <classes>
+            <class name="UI.HomePageTest">
+            </class>
+        </classes>
+    </test>
+    <test name="Backend">
+        <classes>
+            <class name="Backend.ApiTest">
+            </class>
+        </classes>
+    </test>
+</suite>
