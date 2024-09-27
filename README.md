@@ -16,6 +16,7 @@ Following features are used in Framework:
 
 ## How to generate report 
 >allure serve 
+> 
 
  
 
