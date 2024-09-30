@@ -24,8 +24,8 @@ public class CaptureVideo {
         page.navigate("https://automationexercise.com/");
         HomePage homePage = new HomePage(page);
         homePage.clickOnFirstProduct()
-                .clickOnProducts()
-                .clickOnCartButton();
+                .clickOnProductsTabs()
+                .clickOnCartTab();
         context.tracing().stop(new Tracing.StopOptions()
                 .setPath(Paths.get("trace.zip")));
         context.close();

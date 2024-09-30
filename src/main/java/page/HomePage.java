@@ -23,23 +23,19 @@ public class HomePage extends BasePage{
     }
 
     //Navigate to another Page class object from Home Page
-    public ProductPage clickOnProducts() {
+    public ProductPage clickOnProductsTabs() {
         page.locator("//a[@href='/products']").click();
         return new ProductPage(page);
     }
 
-    public HomePage verifyProductsAddedToCartMessage(String name) {
-        //Locator message = getLocatorDynmically("\"//p[normalize-space()='%s']\"", name);
+    public HomePage verifyProductsAddedToCartMessage(String name, String expectedMessage) {
         try{
-            getLocatorDynmically("//p[normalize-space()='%s']", name).isVisible();
-            logger.info(getLocatorDynmically("//p[normalize-space()='%s']", name).textContent());
-            Assert.assertEquals(getLocatorDynmically("//p[normalize-space()='%s']", name).textContent(), "Your product has been added to cart to perfect 10.");
-
+            findDynamicLocator("//p[normalize-space()='%s']", name).isVisible();
+            logger.info(findDynamicLocator("//p[normalize-space()='%s']", name).textContent());
+            Assert.assertEquals(findDynamicLocator("//p[normalize-space()='%s']", name).textContent(), expectedMessage);
         } catch (Exception e) {
             logger.error("Assertion failed");
         }
-
-        //page.locator("//p[normalize-space()='Your product has been added to cart.']").screenshot(new Locator.ScreenshotOptions().setPath(Paths.get("./screenshot/Element.png")));
         page.locator("//button[normalize-space()='Continue Shopping']").click();
         return this;
     }
